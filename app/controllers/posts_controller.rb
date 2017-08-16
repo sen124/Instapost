@@ -8,6 +8,14 @@ class PostsController < ApplicationController
       @post.create(post_params)
       redirect_to root_path
   end
-  
-      
+  def new
+    @post = Post.new(params[:id])
+    
+  end
+
+
+private
+  def post_params
+    params.require (:posts).permit(:photo, :description)
+  end
 end
