@@ -1,4 +1,9 @@
 class Post < ActiveRecord::Base
-  attr_accessor:description
+  
+  belongs_to :user
+  
   mount_uploader :photo, PhotoUploader
+  
+  attr_accessor :photo, :description, :user_id
+  
 end
