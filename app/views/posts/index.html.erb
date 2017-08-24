@@ -1,1 +1,8 @@
-<h1>Hello</h1>
+<% @posts.each do |p| %>
+  <%= image_tag p.user.photo %>
+  <%= p.user.name %>
+  <%= image_tag p.photo %>
+  <%= p.description %>
+<% end %>
+
+<h4>hello</h4>
