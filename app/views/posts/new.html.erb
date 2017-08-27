@@ -1,5 +1,5 @@
-<%= simple_form_for @post, method: :post do |f| %>
-  <%= f.input :photo %>
-  <%= f.input :description %>
-  <%= f.submit 'Post', class: 'btn btn-default btn-block' %>
+<%= simple_form_for @post, method: :post do |post| %>
+  <%= post.input :photo %>
+  <%= post.input :description %>
+  <%= post.submit 'Post', class: 'btn btn-default btn-block' %>
 <% end %>
