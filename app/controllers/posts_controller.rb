@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :is_owner?, only: [:edit, :update]
+  before_action :is_owner?, only: [:edit, :update, :delete]
   
   
   def index
@@ -23,6 +23,11 @@ class PostsController < ApplicationController
     end
   end
   
+  
+  def edit
+    @post= Post.find(params[:id])
+  end
+  
   def update
     @post= Post.find(params[:id])
     @post.update(post_params)
@@ -41,9 +46,10 @@ private
   end
   
   
-  
-  def edit
-    @post= Post.find(params[:id])
+  def destroy
+    @post=Post.find(params[:id])
+    @post.destroy
+    redirect_to root_path
   end
   
   
