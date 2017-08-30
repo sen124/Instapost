@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   
   def create
     @post=Post.find(params[:post_id])
-    @comment=@post.comments.create(comment_params.merge[user_id: current_user.id])
+    @comment=@post.Comments.create(comment_params.merge[user_id: current_user.id])
     @comment.valid?
     redirect_to root_path
   else
