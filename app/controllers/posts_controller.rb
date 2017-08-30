@@ -1,5 +1,12 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :is_owner?, only: [:edit, :update]
+  
+  
+  def index
+    @posts= Post.all.order('created_at DESC')
+  end
+  
   
   def new
     @post = Post.new(params[:id])
@@ -15,6 +22,7 @@ class PostsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  
   def update
     @post= Post.find(params[:id])
     @post.update(post_params)
@@ -24,15 +32,22 @@ class PostsController < ApplicationController
     render :edit, status: :unprocessable_entity
     end
   end
+  
+private
+  def is_owner?
+    if Post.find(params[:id]).user != current_user
+      redirect_to root_path
+    end
+  end
+  
+  
+  
   def edit
     @post= Post.find(params[:id])
   end
   
   
   
-  def index
-    @posts= Post.all.order('created_at DESC')
-  end
   
 
 

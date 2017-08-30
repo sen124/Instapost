@@ -1,9 +1,9 @@
 <% @posts.each do|post| %>
-  <div><%= image_tag post.user.photo %></div></br>
-  <div><%= post.user.name%></div></br>
-  <div><%= image_tag post.photo %></div></br>
-  <div><%= post.description %></div>
-  <% if post.user==current_user %>
+  <h1><%= image_tag post.user.photo %></h1>
+  <h1><%= post.user.name %></h1>
+  <h1><%= image_tag post.photo %></h1>
+  <h1><%= post.description %></h1>
+  <% if post.user == current_user %>
     <%= link_to 'Edit Post', edit_post_path(post.id) %>
   <% end %>
 <% end %>
