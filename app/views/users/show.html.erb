@@ -1,0 +1,8 @@
+<%= image_tag @user.photo %>
+<%= @user.name %>
+
+<%= pluralize (@user.posts.count,'Post')>
+
+<% @user.posts. each do |post| %>
+  <%= image_tag post.photo %>
+<% end %>

@@ -7,13 +7,21 @@
   <% if post.user == current_user %>
     <h1><%= link_to 'Edit Post', edit_post_path(post.id) %></h1>
     <h1><%= link_to 'Delete', post_path(post.id), method: :delete, data: {confirm: "are you sure?"} %></h1>
+    
   <% end %>
 
 
-
-<%= simple_form_for Comment.new, url: post_comments_path(post), method: :post do|f| %>
-  <%= f.input  :text,label:"Comment", placeholder:"Add a Comment..." %>
-  <%= f.submit 'Submit',class: 'btn btn-primary btn-block' %>
+<% post.comments.each do |comment| %>
+  <p><%=comment.user.name %> : <%=comment.text %></p>
+  <% if comment.user == current_user %>
+  <%= link_to 'Delete', post_comments_path(post_id: post.id, id:comment.id), method: :delete %>
+  <% end %>
+  
 <% end %>
-
+<% if user_signed_in? %>
+  <%= simple_form_for Comment.new, url: post_comments_path(post), method: :post do|f| %>
+    <%= f.input  :text,label:"Comment", placeholder:"Add a Comment..." %>
+    <%= f.submit 'Submit',class: 'btn btn-primary btn-block' %>
+  <% end %>
+<% end %>  
 <% end %>
