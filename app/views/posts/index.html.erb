@@ -2,8 +2,9 @@
   <div class="post_box">
     
     <div class="post_header">
-      <%= link_to post.user.name, user_path(post.user_id) %>
-      <div><%= image_tag post.user.photo,class:'prof_pic_small' %></div>
+    
+      <div><%= image_tag post.user.photo,class:'prof_pic_small' %></div> 
+      <div><%= link_to post.user.name, user_path(post.user_id) %></div>
       
     </div>
     

@@ -42,11 +42,12 @@ nav{
 }
 
 .post_header{
-    height:100%;
-    width:100%;
-    margin:0;
-    padding:0;
-    border:0;
+    height:150px;
+    width:150px;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    border:0 solid #000;
     font:inherit;
     vertical-align:baseline;
     color:#003569;
@@ -55,10 +56,23 @@ nav{
     overflow:hidden;
     position:relative;
     cursor:pointer;
+    display:flex;
+    -webkit-box-orient:vertical;
+    flex-direction: column;
+    webkit-box-align:stretch;
+    webkit-box-align:center;
+    webkit-box-orient:horizontal;
+    align-items:stretch;
+    align-items:center;
+    text-decoration:none;
+    color:#003569;
+
 }
 
 .post_body{
-    margin-top:1cm;
+    height:60%;
+    width:60%;
+    margin-top:0cm;
     padding:10px 24px 0px 24px;
     
 }
