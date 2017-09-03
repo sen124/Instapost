@@ -17,6 +17,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 gem'carrierwave'
 gem 'simple_form'
+gem 'acts_as_votable'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
