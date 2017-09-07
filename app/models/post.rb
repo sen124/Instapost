@@ -6,6 +6,8 @@ class Post < ActiveRecord::Base
   
   validates  :photo, :description, :user_id, presence: true
   
+  delegate :photo, :name, to: :user, prefix: true
+  
   acts_as_votable
   
 end
