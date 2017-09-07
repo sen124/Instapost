@@ -70,6 +70,10 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
+    font-awesome-sass (4.7.0)
+      sass (>= 3.2)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.6)
@@ -184,6 +188,8 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.1.0)
   devise
+  font-awesome-rails
+  font-awesome-sass (~> 4.7.0)
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.2.5)
@@ -197,4 +203,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.15.3
+   1.16.0.pre.1

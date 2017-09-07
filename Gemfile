@@ -15,9 +15,11 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
-gem'carrierwave'
+gem 'carrierwave'
 gem 'simple_form'
 gem 'acts_as_votable'
+gem 'font-awesome-sass', '~> 4.7.0'
+gem 'font-awesome-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
